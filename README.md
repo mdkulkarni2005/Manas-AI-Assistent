@@ -4,9 +4,12 @@
 Manas-AI-Assistent is a React Native application designed to provide AI-driven chat capabilities. The app leverages various technologies and libraries to deliver a seamless and responsive user experience.
 
 ## Features
-- AI-powered chat functionality
-- Navigation using React Navigation
-- Customizable themes with React Native Paper
+- AI-powered chat functionality using Google Gemini API
+- Voice command recognition
+- Camera access for taking pictures
+- Image upload from gallery
+- Speech-to-text input
+- Advanced and unique UI
 - Expo support for easy development and deployment
 
 ## Installation
@@ -24,10 +27,15 @@ To get started with the development of Manas-AI-Assistent, follow these steps:
 
 3. Install the dependencies:
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
-4. Start the development server:
+4. Install the `expo-speech`, `expo-camera`, and `react-native-paper` packages:
+   ```bash
+   npm install expo-speech expo-camera expo-image-picker react-native-paper --legacy-peer-deps
+   ```
+
+5. Start the development server:
    ```bash
    npx expo start
    ```
@@ -52,6 +60,10 @@ Manas-AI-Assistent/
 │
 ├── src/                     # Source files
 │   ├── components/          # React components
+│   │   ├── CameraComponent.js
+│   │   ├── ChatComponent.js
+│   │   ├── ImageUploadComponent.js
+│   │   └── VoiceCommandComponent.js
 │   ├── config/              # Configuration files
 │   ├── screens/             # Screen components for navigation
 │   │   └── ChatScreen.js
@@ -60,7 +72,7 @@ Manas-AI-Assistent/
 ├── .env                     # Environment variables
 ├── .gitignore               # Git ignore file
 ├── app.json                 # Expo configuration
-└── package.json             # NPM package configuration
+└── README.md                # Project documentation
 ```
 
 ## Contributing
