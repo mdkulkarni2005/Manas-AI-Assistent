@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Button, Text, StyleSheet, Modal, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Modal, TouchableOpacity } from 'react-native';
 import Voice from '@react-native-voice/voice';
 import { IconButton } from 'react-native-paper';
 
 const VoiceCommandComponent = ({ onCommand }) => {
-  const [isListening, setIsListening] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
@@ -31,9 +30,9 @@ const VoiceCommandComponent = ({ onCommand }) => {
   };
 
   const startListening = async () => {
-    setIsListening(true);
     try {
       await Voice.start('en-US');
+      setModalVisible(true);
     } catch (error) {
       console.error('Error starting voice recognition:', error);
     }

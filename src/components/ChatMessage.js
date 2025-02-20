@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
-const ChatMessage = ({ message, isUser, isImage }) => {
+const ChatMessage = ({ message, isUser, isImage, isTyping }) => {
   return (
     <View style={[styles.messageContainer, isUser ? styles.userMessage : styles.aiMessage]}>
       {isImage ? (
         <Image source={{ uri: message }} style={styles.image} />
       ) : (
-        <Text style={styles.messageText}>{message}</Text>
+        <Text style={isTyping ? styles.typingText : styles.messageText}>{message}</Text>
       )}
     </View>
   );
@@ -30,6 +30,11 @@ const styles = StyleSheet.create({
   },
   messageText: {
     fontSize: 16,
+  },
+  typingText: {
+    fontSize: 16,
+    fontStyle: 'italic',
+    color: '#999',
   },
   image: {
     width: 200,
